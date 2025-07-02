@@ -702,7 +702,7 @@
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 ">
           <div class="banar">
             <div class="text">
-              <h1>BUYROUTE</h1>
+              <h1>Click Cart</h1>
               <h3>Browse It, Love It, Buy It</h3>
             </div>
           </div>
@@ -804,7 +804,7 @@
               </form>
               <div class="btn1">
                 <a href="{{url_for('addcart',itemid=i[0],name=i[1],price=i[3],category=i[5],img=i[7])}}"
-                  class="btn btn-warning" style="float: left;">Add to cart</a>
+                  class="btn btn-success" style="float: left;">Add to cart</a>
               </div>
             </div>
           </div>
@@ -864,10 +864,10 @@
           product details, add items to the cart, and place orders using a simple and user-friendly interface.
         </p>
         <div style="margin-top: 20px; display: flex; flex-direction: row; justify-content: space-between;">
-          <h6 href="#"><i class="fa-brands fa-youtube"> Youtube</i></h6>
-          <h6 href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-            <h6 href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
-              <h6 href="#"><i class="fa-brands fa-linkedin"></i> Linkedin</a>
+          <h6 href="https://www.Youtube.com"><i class="fa-brands fa-youtube"> Youtube</i></h6>
+          <h6 href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <h6 href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i> Facebook</a>
+              <h6 href="https://www.linkedin.com/in/illa-brahma-kishore-9562662a2/"><i class="fa-brands fa-linkedin"></i> Linkedin</a>
         </div>
       </div>
 
@@ -875,9 +875,9 @@
       <div style="flex: 1; min-width: 180px;">
         <h3 style="color: #222; font-weight: bold;">Explore</h3>
         <ul style="list-style: none; padding: 0; margin-top: 10px; line-height: 2;">
-          <li><a href="#" style="color: #555; text-decoration: none;">Home</a></li>
+          <li><a href="{{url_for('index')}}" style="color: #555; text-decoration: none;">Home</a></li>
           <li><a href="#" style="color: #555; text-decoration: none;">About us</a></li>
-          <li><a href="#" style="color: #555; text-decoration: none;">Courses</a></li>
+          <li><a href="#" style="color: #555; text-decoration: none;">Location</a></li>
           <li><a href="#" style="color: purple; text-decoration: none;">Privacy policy</a></li>
         </ul>
       </div>
