@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Review Form</title>
+  <link rel="icon" href="/static/wlogo.png">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 500px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin: 15px 0 5px;
+    }
+
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus, textarea:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .rate {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+
+    .rate input[type="radio"] {
+      display: none;
+    }
+
+    .rate label {
+      font-size: 24px;
+      color: #ccc;
+      padding: 0 5px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .rate input:checked ~ label,
+    .rate label:hover,
+    .rate label:hover ~ label {
+      color: #ffc107;
+    }
+
+    .button-52 {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+      text-align: center;
+      margin: 10px;
+    }
+
+    .button-52:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    center {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#"><button class="button-52">Go to home</button></a>
+
+  <div class="container">
+    <form method="POST">
+      <label>Review Title</label>
+      <input type="text" name="title">
+
+      <label>Review Description</label>
+      <textarea name="review"></textarea>
+
+      <label>Rating</label>
+      <div class="rate">
+        <input type="radio" id="star5" name="rate" value="5" />
+        <label for="star5" title="5 stars">★</label>
+        <input type="radio" id="star4" name="rate" value="4" />
+        <label for="star4" title="4 stars">★</label>
+        <input type="radio" id="star3" name="rate" value="3" />
+        <label for="star3" title="3 stars">★</label>
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="2 stars">★</label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="1 star">★</label>
+      </div>
+
+      <center><button class="button-52" type="submit">Submit</button></center>
+    </form>
+  </div>
+
+</body>
+</html>

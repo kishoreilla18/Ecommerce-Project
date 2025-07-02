@@ -1,0 +1,90 @@
+{% extends 'index.html' %}
+
+    {% block addcss %}
+    <link rel="stylesheet" href="{{url_for('static', filename='dashboard.css')}}">
+    {% endblock %}
+
+{% block content %}
+    <!-- <section class="sec1">
+        <div class="container">
+            <div class="row">
+                {% for i in items_data %}
+                <div class="col-12 ">
+                    <div class="card" style="width: 18rem;">
+                        <a href="#"><img src="/static/{{i[7]}}" class="card-img-top" alt="ntg"></a>
+                        <div class="card-body">
+                            <a href="#"><h5 class="card-title">Name: {{i[1]}}</h5></a>
+                            <h6 class="card-id">{{i[0]}}</h6>
+                            <h6 class="card-id">Price: {{i[3]}}</h6>
+                            <h6 class="card-id">Available stock : {{i[4]}}</h6>
+                            <b>Select Quantity</b>
+                            <form method="post" action="#">
+                            <select name="qyt">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                            <br>
+                            <button class="btn btn-success" style="float: left;">Buy NOW</button>
+                            </form>  
+                                <a href="#"><button
+                                        class="btn btn-danger" style="float: right;">ADD CART</button></a>
+                            
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section> -->
+    <section class="sec1">
+        <div class="container">
+            <h2 class="category-title">Featured Products</h2>
+            <div class="row">
+                {% for i in items_data %}
+                <div class="col-6 col-sm-3 col-lg-3 mb-4">
+                    <div class="card">
+                        <a href="{{url_for('description',itemid=i[0])}}"><img src="/static/{{i[7]}}/" class="card-img-top" alt="Product" /></a>
+                        <div class="card-body">
+                            <div class="matter">
+                                <h5 class="card-title">{{i[1]}}</h5>
+                            </div>
+                            <span>Cost:-{{i[3]}}</span>
+                            <form method="post" action="{{url_for('pay',itemid=i[0],name=i[1],price=i[3],quantity=i[4])}}">
+                                <select name="qyt">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                                <br>
+                                <button class="btn btn-success" style="float: right;">Buy NOW</button>
+                            </form>
+                            <div class="btn1">
+                                <a href="{{url_for('addcart',itemid=i[0],name=i[1],price=i[3],category=i[5],img=i[7])}}"
+                                    class="btn btn-warning" style="float: left;">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+  
+
+{% endblock %}

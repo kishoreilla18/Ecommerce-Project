@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(rgb(241, 224, 224), rgb(145, 140, 140));
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    background-attachment: fixed;
+}
+
+/* .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        } */
+
+.button {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-img-top {
+    height: 250px;
+}
+
+.sec1 {
+    margin-top: 5%;
+}
+
+.card {
+    height: 450px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+}
+
+.card-title {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+span {
+    font-weight: 700;
+    color: #e53e3e;
+    font-size: 1.1rem;
+    display: block;
+
+}
+
+.category-title {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 3rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-menu {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item:hover {
+    background-color: #e9ecef;
+}
+
+/* #back {
+            font-size: 40px;
+            color: white;
+            margin: 3%;
+        }
+
+        i {
+            padding: 0 2% 0 2%;
+            margin-top: 2%;
+        }
+
+        #back:hover {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px white;
+        } */
