@@ -597,5 +597,42 @@ def getinvoice(ordid):
         flash('Pls login first')
         return redirect(url_for('userlogin'))'''
 
+@app.route('/forgotpassword',methods=('GET','POST'))
+def forgotpassword():
+        if request.method=='POST':
+            f_email=request.form['email']
+            cursor=mydb.cursor(buffered=True)
+            cursor.execute('select count(*) from users where useremail=%s',[f_email])
+            count_email=cursor.fetchone()
+            if count_email[0]==1:
+                subject=f'Reset link for SNM website forgot password'
+                body=f"click to reset link: {url_for('newpassword',data=entoken(f_email),_external=True)}"
+                send_mail(to=f_email,subject=subject,body=body)
+                flash(f'Reset link has been set to given mailID {f_email}')
+                return redirect(url_for('userlogin'))
+            elif count_email[0]==0:
+                flash(f'Please register your account')
+                return redirect(url_for('usersignup'))
+                
+        return render_template('forgotpassword.html')
+
+@app.route('/newpassword/<data>',methods=['GET','POST'])
+def newpassword(data):
+        if request.method=='POST':
+            npassword=request.form['new_password']
+            cpassword=request.form['confirm_password']
+            if npassword==cpassword:
+                email=dtoken(data)
+                hashed=bcrypt.hashpw(cpassword.encode(),bcrypt.gensalt())
+                cursor=mydb.cursor(buffered=True)
+                cursor.execute('update users set password=%s where useremail=%s',[hashed,email])
+                mydb.commit()
+                flash(f'newpassword updated successfully Please login')
+                return redirect(url_for('userlogin'))
+            else:
+                flash('Mismatched password Please check')
+                return redirect(url_for('newpassword',data=data))
+        return render_template('newpassword.html')
+
 if __name__=='__main__':
     application.run()
