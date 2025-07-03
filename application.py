@@ -597,7 +597,7 @@ def getinvoice(ordid):
         flash('Pls login first')
         return redirect(url_for('userlogin'))'''
 
-@app.route('/forgotpassword',methods=('GET','POST'))
+@application.route('/forgotpassword',methods=('GET','POST'))
 def forgotpassword():
         if request.method=='POST':
             f_email=request.form['email']
@@ -616,7 +616,7 @@ def forgotpassword():
                 
         return render_template('forgotpassword.html')
 
-@app.route('/newpassword/<data>',methods=['GET','POST'])
+@application.route('/newpassword/<data>',methods=['GET','POST'])
 def newpassword(data):
         if request.method=='POST':
             npassword=request.form['new_password']
